@@ -8,7 +8,7 @@ import serialize from './serialize'
 async function write (config, req, res) {
   try {
     const entry = {
-      expires: config.expires,
+      expires: config.expires || Date.now(),
       data: serialize(config, req, res)
     }
 
